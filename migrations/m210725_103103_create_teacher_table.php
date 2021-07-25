@@ -20,9 +20,9 @@ class m210725_103103_create_teacher_table extends Migration
             'email' => $this->string(70)->notNull()->unique(),
         ]);
 
-        $this->insert('student', ['fname' => 'Margarita', 'lname' => 'Kilina', 'patronymic' => 'Leonidovna', 'email' => 'teacherMargo@mail.ru']);
-        $this->insert('student', ['fname' => 'Valeria', 'lname' => 'Kilina', 'patronymic' => 'Leonidovna', 'email' => 'teacherValeria@mail.ru']);
-        $this->insert('student', ['fname' => 'Lybov', 'lname' => 'Kilina', 'patronymic' => 'Leonidovna', 'email' => 'teacherLybov@mail.ru']);
+        $this->insert('teacher', ['fname' => 'Margarita', 'lname' => 'Kilina', 'patronymic' => 'Leonidovna', 'email' => 'teacherMargo@mail.ru']);
+        $this->insert('teacher', ['fname' => 'Valeria', 'lname' => 'Kilina', 'patronymic' => 'Leonidovna', 'email' => 'teacherValeria@mail.ru']);
+        $this->insert('teacher', ['fname' => 'Lybov', 'lname' => 'Kilina', 'patronymic' => 'Leonidovna', 'email' => 'teacherLybov@mail.ru']);
     }
 
 
