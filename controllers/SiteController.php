@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\tables\Student;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -61,6 +62,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $model =  Student::find()->all();
+
+        var_dump($model);
+        die();
         return $this->render('index');
     }
 
