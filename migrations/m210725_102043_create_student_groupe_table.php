@@ -39,6 +39,10 @@ class m210725_102043_create_student_groupe_table extends Migration
      */
     public function safeDown()
     {
+        $this->dropForeignKey(
+            'fk_student_groupe-student_id',
+            'student_groupe'
+        );
         $this->dropTable('{{%student_groupe}}');
     }
 }
