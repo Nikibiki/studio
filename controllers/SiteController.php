@@ -62,10 +62,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model =  Student::find()->all();
-
-        var_dump($model);
-        die();
         return $this->render('index');
     }
 
