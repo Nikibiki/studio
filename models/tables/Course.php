@@ -53,4 +53,13 @@ class Course extends \yii\db\ActiveRecord
     {
         return $this->hasMany(StudentGroupeCourseWithTeacher::className(), ['group_id' => 'id']);
     }
+
+    public static function getCoursesList()
+    {
+        return self::find()
+            ->select(['name'])
+            ->asArray()
+            ->indexBy('id')
+            ->column();
+    }
 }

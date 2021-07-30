@@ -68,15 +68,9 @@ class StudentGroupe extends \yii\db\ActiveRecord
             ->all();
 
         foreach($students as &$student){
-            $email = $student['email'];
-            unset($student['id'], $student['email']);
-            $fio = '';
-            foreach ($student as $data){
-                $fio .= $data . ' ';
-            }
-            $student = $fio . "[{$email}]";
+            $student = $student['lname'] . ' ' . $student['fname'] . ' ' . $student['patronymic'] . ' [' . $student['email'] . ']';
         }
-
+        unset($student);
         return $students;
     }
 
@@ -119,6 +113,22 @@ class StudentGroupe extends \yii\db\ActiveRecord
             ->select('student_id')
             ->where(['groupe_id' => $this->groupe_id ])
             ->column();
+    }
+
+    public static function getGroups()
+    {
+        $groups = StudentGroupe::find()
+            ->select('groupe_id')
+            ->asArray()
+            ->distinct()
+            ->indexBy('groupe_id')
+            ->column();
+        foreach ($groups as &$group){
+            $group = "Группа $group";
+        }
+        unset($group);
+
+        return $groups;
     }
 
 

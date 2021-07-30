@@ -29,7 +29,3 @@ use yii\bootstrap\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
-
-<script>
-    document.getElementById('studentgroupe-student_id').onchange = function( elem ){console.log('Значение изменено', typeof elem.target)};
-</script>

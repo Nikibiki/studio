@@ -64,9 +64,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-//        echo '<pre>';
-//        var_dump($stud);
-//        die();
         return $this->render('index');
     }
 

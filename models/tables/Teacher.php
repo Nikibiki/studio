@@ -61,4 +61,26 @@ class Teacher extends \yii\db\ActiveRecord
     {
         return $this->hasMany(StudentGroupeCourseWithTeacher::className(), ['teacher_id' => 'id']);
     }
+
+    public static function getTeachersList()
+    {
+        $teachers = self::find()
+            ->select(['*'])
+//            ->asArray()
+            ->indexBy('id')
+            ->all();
+
+        foreach($teachers as &$teacher){
+//            $teacher = $teacher['lname'] . ' ' . $teacher['fname'] . ' ' . $teacher['patronymic'] . ' [' . $teacher['email'] . ']';
+            $teacher = $teacher->fio;
+        }
+        unset($teacher);
+
+        return $teachers;
+    }
+
+    public function getFio()
+    {
+        return $this->lname . ' ' . $this->fname . ' ' . $this->patronymic . ' [' . $this->email . ']';
+    }
 }
