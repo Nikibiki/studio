@@ -3,8 +3,10 @@
 namespace app\controllers;
 
 use app\models\tables\Student;
+use app\models\tables\StudentGroupe;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -62,6 +64,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+//        echo '<pre>';
+//        var_dump($stud);
+//        die();
         return $this->render('index');
     }
 
