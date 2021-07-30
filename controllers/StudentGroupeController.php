@@ -132,7 +132,7 @@ class StudentGroupeController extends Controller
                         'student_id' => $student_id,
                         'groupe_id' => $group_id
                     ]);
-                    $model->save(false)
+                    $model->save(false);
                 }
                 return $this->redirect(['view', 'id' => $model->groupe_id]);
             }

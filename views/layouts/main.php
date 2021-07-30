@@ -39,11 +39,14 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Студенты', 'url' => ['/student']],
+            ['label' => 'Преподаватели', 'url' => ['/teacher']],
+            ['label' => 'Курсы', 'url' => ['/course']],
+            ['label' => 'Управление группами', 'url' => ['/student-groupe']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
+
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(

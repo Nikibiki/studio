@@ -17,12 +17,13 @@ class m210725_110427_create_student_groupe_course_with_teacher_table extends Mig
             'group_id' => $this->integer()->notNull(),
             'course_id' => $this->integer()->notNull(),
             'teacher_id' => $this->integer()->notNull(),
+            'status' => "enum('0', '1', '2') not null default '0'"
         ]);
 
         $this->addForeignKey(
             'fk_table-course_id',
             'student_groupe_course_with_teacher',
-            'group_id',
+            'course_id',
             'course',
             'id'
         );
